@@ -1,5 +1,8 @@
 import Constants from 'expo-constants';
 
+
+import { SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY } from "dotenv"
+
 interface EnvironmentConfig {
   supabase: {
     url: string;
@@ -45,9 +48,9 @@ const getEnvVar = (key: string, fallback?: string): string => {
 
 export const environment: EnvironmentConfig = {
   supabase: {
-    url: 'https://jljjwictuugpuqujmktz.supabase.co',
-    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impsamp3aWN0dXVncHVxdWpta3R6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQyMjI1MjksImV4cCI6MjA2OTc5ODUyOX0.fkVovwGZ6mW37dgnma8nHNi_6UOZEekMBMQu7pNBiCA',
-    serviceRoleKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impsamp3aWN0dXVncHVxdWpta3R6Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1NDIyMjUyOSwiZXhwIjoyMDY5Nzk4NTI5fQ.6b1sxSp32iPKlR2SNOzocsA2uHsNelACj18gHumBIr4',
+    url: SUPABASE_URL,
+    anonKey: SUPABASE_ANON_KEY,
+    serviceRoleKey: SUPABASE_SERVICE_ROLE_KEY,
   },
   app: {
     name: getEnvVar('APP_NAME', 'Digital Learning Platform'),
