@@ -6,16 +6,18 @@ export default {
     slug: "digital-learning-platform",
     version: "1.0.0",
     orientation: "portrait",
-    userInterfaceStyle: "light",
+    userInterfaceStyle: "automatic",
     assetBundlePatterns: [
       "**/*"
     ],
     ios: {
       supportsTablet: true,
-      bundleIdentifier: "com.vivekpanth.digitallearningplatform"
+      bundleIdentifier: "com.digitallearning.app",
+      buildNumber: "1.0.0"
     },
     android: {
-      package: "com.vivekpanth.digitallearningplatform"
+      package: "com.digitallearning.app",
+      versionCode: 1
     },
     extra: {
       SUPABASE_URL: process.env.SUPABASE_URL || 'https://jljjwictuugpuqujmktz.supabase.co',
@@ -35,6 +37,20 @@ export default {
         projectId: "0aed62af-7fd2-4370-81d2-01ad8d1eefff"
       }
     },
-    plugins: []
+    plugins: [
+      [
+        "expo-notifications",
+        {
+          "color": "#6366F1"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ],
+      "expo-font"
+    ]
   }
 }; 
