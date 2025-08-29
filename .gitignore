@@ -1,7 +1,9 @@
 # OSX
 #
 .DS_Store
-
+config/environment.ts
+*.env
+.env.*
 # Xcode
 #
 build/
